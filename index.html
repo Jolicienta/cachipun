@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Cachipun</title>
+</head>
+<body style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+    <div class="rounded text-center" style="background-color: #cabdcc; height: 40%; width: 50%;">
+        <h1 style="text-align: center; margin-bottom: 20%;">¡Juguemos al Cachipun!</h1>
+        <button type="button" style="width: max-content; text-align: center;" onclick="myFunction()" class="btn-info">JUGUEMOS</button>
+        <div id="resultados">
+
+        </div>
+    </div>
+
+    <script type="text/javascript">
+
+    function myFunction() {
+        do {
+            var jugadas = prompt("Elige cuantas veces deseas jugar:");
+
+            if (0 < jugadas <= 10){
+                for (var i = 0; i < jugadas; i++){
+                    var eleccion_jugador = prompt("¡Elige tu jugada!\nPiedra : 1\nPapel : 2\nTijeras : 3");
+                    var jugada_maquina = Math.floor(Math.random()*3);
+                    const ganar = "Has Ganado";
+                    const perder = "Has perdido";
+                    var div= document.getElementById('resultados')
+                    var newp = document.createElement("p");
+
+                    if (eleccion_jugador == 1 & jugada_maquina == 0) {
+                        alert("Empate, ambos han elegido Piedra");
+                        var newContent = document.createTextNode("Empate, ambos han elegido Piedra");
+                        newp.appendChild(newContent); //añade texto al div creado.
+                        div.appendChild(newp);
+
+                    } else if (eleccion_jugador == 2 & jugada_maquina == 1) {
+                        alert("Empate, ambos han elegido Tijeras");
+                        var newContent = document.createTextNode("Empate, ambos han elegido Piedra");
+                        newp.appendChild(newContent); //añade texto al div creado.
+                        div.appendChild(newp);
+
+                        // document.getElementById('2').innerHTML = "Empate, ambos han elegido Tijera";
+                    } else if (eleccion_jugador == 3 & jugada_maquina == 2) {
+                        alert("Empate, ambos han elegido Papel");
+                        document.getElementById('3').innerHTML = "Empate, ambos han elegido Papel";
+                    } else if (eleccion_jugador == 1 & jugada_maquina == 1){
+                        alert(perder);
+                        var newContent = document.createTextNode("Empate, ambos han elegido Piedra");
+                        newp.appendChild(newContent); //añade texto al div creado.
+                        div.appendChild(newp);
+
+                        // document.getElementById('4').innerHTML = perder;
+                    } else if (eleccion_jugador == 1 & jugada_maquina == 2) {
+                        alert(ganar);
+                        var newContent = document.createTextNode("Empate, ambos han elegido Piedra");
+                        newp.appendChild(newContent); //añade texto al div creado.
+                        div.appendChild(newp);
+
+                        // document.getElementById('5').innerHTML = ganar;
+                    } else if (eleccion_jugador == 2 & jugada_maquina == 0) {
+                        alert(ganar);
+                        var newContent = document.createTextNode("Empate, ambos han elegido Piedra");
+                        newp.appendChild(newContent); //añade texto al div creado.
+                        div.appendChild(newp);
+
+                        // document.getElementById('6').innerHTML = ganar;
+                    } else if (eleccion_jugador == 2 & jugada_maquina == 2) {
+                        alert(perder);
+                        var newContent = document.createTextNode("Empate, ambos han elegido Piedra");
+                        newp.appendChild(newContent); //añade texto al div creado.
+                        div.appendChild(newp);
+
+                        // document.getElementById('7').innerHTML = perder;
+                    } else if (eleccion_jugador == 3 & jugada_maquina == 0) {
+                        alert(perder);
+                        var newContent = document.createTextNode("Empate, ambos han elegido Piedra");
+                        newp.appendChild(newContent); //añade texto al div creado.
+                        div.appendChild(newp);
+
+                        // document.getElementById('8').innerHTML = perder;
+                    } else if (eleccion_jugador == 3 & jugada_maquina == 1) {
+                        alert(ganar);
+                        var newContent = document.createTextNode("Empate, ambos han elegido Piedra");
+                        newp.appendChild(newContent); //añade texto al div creado.
+                        div.appendChild(newp);
+
+                        // document.getElementById('9').innerHTML = ganar;
+                    };
+                };//cierre del FOR
+            } else if (jugadas > 10){
+                alert("Elige solo hasta 10 jugadas");
+                let jugadas = prompt("Elige cuantas veces deseas jugar:");
+            } else if (jugadas === NaN | jugadas === 0){
+                alert("Por favor ingresa un numero del 1 al 10");
+                let jugadas = prompt("Elige cuantas veces deseas jugar:");
+            };//cierre del ciclo if...else
+        } while (jugadas === 0); // cierre del DO
+    }; //cierre de function
+
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+</body>
+</html>
