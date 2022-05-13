@@ -9,9 +9,9 @@
 </head>
 <body style="display: flex; justify-content: center; align-items: center; height: 100vh;">
     <div class="rounded text-center" style="background-color: #cabdcc; height: 40%; width: 50%;">
-        <h1 style="text-align: center; margin-bottom: 20%;">¡Juguemos al Cachipun!</h1>
-        <button type="button" style="width: max-content; text-align: center;" onclick="myFunction()" class="btn-info">JUGUEMOS</button>
-        <div id="resultados">
+        <h1 style="text-align: center; margin-bottom: 20%;">¿Juguemos al Cachipún?</h1>
+        <button type="button" style="width: max-content; text-align: center; color: white;" onclick="myFunction()" class="btn-info">¡JUGUEMOS!</button>
+        <div class="rounded text-center" id="resultados" style="height: content; background-color: #cabdcc;">
 
         </div>
     </div>
@@ -36,59 +36,45 @@
                         var newContent = document.createTextNode("Empate, ambos han elegido Piedra");
                         newp.appendChild(newContent); //añade texto al div creado.
                         div.appendChild(newp);
-
                     } else if (eleccion_jugador == 2 & jugada_maquina == 1) {
                         alert("Empate, ambos han elegido Tijeras");
-                        var newContent = document.createTextNode("Empate, ambos han elegido Piedra");
+                        var newContent = document.createTextNode("Empate, ambos han elegido Tijeras");
                         newp.appendChild(newContent); //añade texto al div creado.
                         div.appendChild(newp);
-
-                        // document.getElementById('2').innerHTML = "Empate, ambos han elegido Tijera";
                     } else if (eleccion_jugador == 3 & jugada_maquina == 2) {
                         alert("Empate, ambos han elegido Papel");
-                        document.getElementById('3').innerHTML = "Empate, ambos han elegido Papel";
+                        var newContent = document.createTextNode("Empate, ambos han elegido Papel");
+                        newp.appendChild(newContent); //añade texto al div creado.
+                        div.appendChild(newp);
                     } else if (eleccion_jugador == 1 & jugada_maquina == 1){
                         alert(perder);
-                        var newContent = document.createTextNode("Empate, ambos han elegido Piedra");
+                        var newContent = document.createTextNode(perder);
                         newp.appendChild(newContent); //añade texto al div creado.
                         div.appendChild(newp);
-
-                        // document.getElementById('4').innerHTML = perder;
                     } else if (eleccion_jugador == 1 & jugada_maquina == 2) {
                         alert(ganar);
-                        var newContent = document.createTextNode("Empate, ambos han elegido Piedra");
-                        newp.appendChild(newContent); //añade texto al div creado.
-                        div.appendChild(newp);
-
-                        // document.getElementById('5').innerHTML = ganar;
+                        var newContent = document.createTextNode(ganar);
+                        newp.appendChild(newContent); //añade texto al div creperder
                     } else if (eleccion_jugador == 2 & jugada_maquina == 0) {
                         alert(ganar);
-                        var newContent = document.createTextNode("Empate, ambos han elegido Piedra");
+                        var newContent = document.createTextNode(ganar);
                         newp.appendChild(newContent); //añade texto al div creado.
                         div.appendChild(newp);
-
-                        // document.getElementById('6').innerHTML = ganar;
                     } else if (eleccion_jugador == 2 & jugada_maquina == 2) {
                         alert(perder);
-                        var newContent = document.createTextNode("Empate, ambos han elegido Piedra");
+                        var newContent = document.createTextNode(perder);
                         newp.appendChild(newContent); //añade texto al div creado.
                         div.appendChild(newp);
-
-                        // document.getElementById('7').innerHTML = perder;
                     } else if (eleccion_jugador == 3 & jugada_maquina == 0) {
                         alert(perder);
-                        var newContent = document.createTextNode("Empate, ambos han elegido Piedra");
+                        var newContent = document.createTextNode(perder);
                         newp.appendChild(newContent); //añade texto al div creado.
                         div.appendChild(newp);
-
-                        // document.getElementById('8').innerHTML = perder;
                     } else if (eleccion_jugador == 3 & jugada_maquina == 1) {
                         alert(ganar);
-                        var newContent = document.createTextNode("Empate, ambos han elegido Piedra");
+                        var newContent = document.createTextNode(ganar);
                         newp.appendChild(newContent); //añade texto al div creado.
                         div.appendChild(newp);
-
-                        // document.getElementById('9').innerHTML = ganar;
                     };
                 };//cierre del FOR
             } else if (jugadas > 10){
